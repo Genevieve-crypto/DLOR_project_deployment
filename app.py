@@ -8,22 +8,6 @@ import streamlit as st
 import tensorflow as tf
 import numpy as np
 from PIL import Image
-# ----------------------------------------
-# Page background
-# ----------------------------------------
-def set_bg(image_file):
-    with open(image_file, "rb") as f:
-        data = base64.b64encode(f.read()).decode()
-    st.markdown(f"""
-    <style>
-    .stApp {{
-        background: url("data:image/jpg;base64,{data}") no-repeat center center fixed;
-        background-size: cover;
-    }}
-    </style>
-    """, unsafe_allow_html=True)
-
-set_bg("background.jpg")
 
 # ----------------------------------------
 # Page configuration
@@ -102,3 +86,21 @@ if uploaded_file is not None:
     st.subheader("Prediction Result")
     st.write("Predicted class index:", predicted_class)
     st.write("Confidence:", f"{confidence:.2f}")
+
+# ----------------------------------------
+# Page background
+# ----------------------------------------
+def set_bg(image_file):
+    with open(image_file, "rb") as f:
+        data = base64.b64encode(f.read()).decode()
+    st.markdown(f"""
+    <style>
+    .stApp {{
+        background: url("data:image/jpg;base64,{data}") no-repeat center center fixed;
+        background-size: cover;
+    }}
+    </style>
+    """, unsafe_allow_html=True)
+
+set_bg("background.jpg")
+

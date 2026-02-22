@@ -17,8 +17,8 @@ st.set_page_config(
     layout="centered"
 )
 
-st.title("Model Deployment with Streamlit")
-st.write("Upload an aircraft image to get a prediction.")
+st.title("Military Aircraft Image Classification")
+st.write("Please upload an aircraft image to get a prediction.")
 
 # ----------------------------------------
 # Load TFLite model (cached)
@@ -103,4 +103,5 @@ def set_bg(image_file):
     """, unsafe_allow_html=True)
 
 set_bg("background.jpg")
+
 
